@@ -5,7 +5,8 @@ Meteor.methods({
 	'addAnswer': function(answerText){
 		var answerId = Answers.insert({
 			'answerText': answerText,
-			'submittedOn': new Date()
+			'submittedOn': new Date(),
+			'submittedBy' : Meteor.userId()
 		});
 
 		return	answerId;

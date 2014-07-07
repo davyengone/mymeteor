@@ -1,0 +1,39 @@
+<head>
+  <title>mymeteor</title>
+</head>
+
+<body>
+  {{> addAnswer}}
+  {{> answers}}
+</body>
+
+<template name="addAnswer">
+	<div class="container">
+		<h3>Question: Is the world getting warmer?</h3>
+		<textarea class="form-control" id="add-Answer" rows="3"></textarea>
+		<br>
+		<button class="btn btn-primary btn-md add-Answer">Validate</button>
+	</div>
+</template>
+
+
+<template name="answers">
+  <br>
+  <br>
+  <h2>All Questions</h2>
+  {{#each items}}
+    {{> answer}}
+  {{/each}}
+</template>
+
+<template name="answer">
+  <div>
+    <p class="lead">
+      {{answerText}}
+      <br>
+      <a class="btn btn-xs btn-success yes" href="#"><i class="icon-thumbs-up"></i> Yes {{yes}}</a>
+      <a class="btn btn-xs btn-primary no" href="#"><i class="icon-thumbs-down"></i> No {{no}}</a>
+    </p>
+  </div>
+</template>
+
